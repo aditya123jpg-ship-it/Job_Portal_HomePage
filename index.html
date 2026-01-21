@@ -3,126 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        nav a{
+            background-color: #e5e7eb;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover{
+            color: #93c5fd;
+        }
+
+        nav button{
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        header{
+            background-color: #0f172a;
+            color: #e5e7eb;
+            padding: 15px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 30px;
+        }
+
+        section{
+            padding: 20px;
+            background-color: #a4b9cf;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        button:hover{
+            background-color: #1d4ed8;
+        }
+
+        button{
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        main {
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+
+        input,select{
+            padding: 8px;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+        .hero {
+            background-color: #eef2f7;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            max-width: 1100px;
+            margin: 40px auto;
+            border-radius: 12px;
+            overflow: hidden;  
+        }
+
+        .hero-text{
+            max-width: 500px;
+            flex: 1;
+        }
+
+        .hero-text h2{
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        .hero-text p{
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .hero form{
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero input{
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .hero button{
+            padding: 10px 10px;
+            font-weight: 600;
+        }
+
+        .hero-image{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img{
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+        }
+
+        .featured-jobs {
+            background-color: #eef2f7;   
+            padding: 50px 30px;
+            margin-top: 50px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .featured-jobs h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0f172a;
+        }
+
+            
+        .jobs-container {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .job-card {
+            background-color: white;
+            padding: 25px;
+            width: auto;
+            max-width: 380px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .job-card h3 {
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .job-card p {
+            margin: 6px 0;
+            color: #374151;
+            font-size: 14px;
+        }
+
+            
+        .job-card button {
+            margin-top: 15px;
+            padding: 9px 16px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .job-card button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            transition: 0.3s;
+        }
+
+        .categories {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px 30px;
+            background-color: #eef2f7;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0f172a;
+            font-size: 26px;
+        }
+
+
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        
+        .category-card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+        }
+
+        .category-card h3 {
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        
+        .category-card ul {
+            padding-left: 18px;
+        }
+
+        .category-card li {
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .footer {
+            background-color: #0f172a;
+            color: #e5e7eb;
+            margin-top: 80px;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .footer-content p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #93c5fd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+
+
+    </style>
     <title>JobSphere</title>
 </head>
 <body>
     <header>
         <div>
-            <h1>JobSphere</h1>
+            <h1 style="margin: 0; font-size: 24px;">JobSphere</h1>
         </div>
 
         <div>
         <nav>
-            <a href="index.html">Home</a>|
-            <a href="jobs.html">Listing of jobs</a>|
-            <a href="#">Companies</a>|
-            <a href="login.html">Login</a>|
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Listing of jobs</a>
+            <a href="#">Companies</a>
+            <a href="login.html">Login</a>
+            <button>Post a Job</button>
         </nav>
-
-        <button>Post a Job</button>
         </div>
 
     </header>
 
     <main>
         
-        <section>
-            <br>
-            <br>
-            <h2>Where Talent Meets Opportunties.</h2>
-            <p>
-                JobSphere is a modern job portal designed to connect talented individuals with trusted companies.
-                We provide a simple and reliable platform where fresh graduates and experienced professionals
-                can explore verified job opportunities, apply with confidence, and take meaningful steps toward
-                building a successful career
-            </p>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Where Talent Meets Opportunties</h2>
+                <p>
+                    JobSphere is a modern job portal designed to connect talented individuals with trusted companies.
+                    We provide a simple and reliable platform where fresh graduates and experienced professionals
+                    can explore verified job opportunities, apply with confidence, and take meaningful steps toward
+                    building a successful career
+                </p>
 
-            <br><br>
-            <form >
-            <input type="text" placeholder="Enter the keywords related to the job you aspire "></input>
-            <input type="text" placeholder="Location"></input>
-            <button>Search Job</button>
-            </form>
-
-            <br>
-
-            <img src="images/Heroo.jpg" alt="People working and building careers" height="500" >
-
+                <form >
+                    <input type="text" placeholder="Enter the keywords related to the job you aspire "></input>
+                    <input type="text" placeholder="Location"></input>
+                    <button>Search Job</button>
+                </form>
+            </div>
+            <div class="hero-image">
+                <img src="images/Heroo.jpg" alt="People working and building careers"  >
+            </div>
         </section>
+
+
         <br><br>
-        <section>
+        <section class="categories"> 
             <h2>Popular Job Categories for you</h2>
 
-            <div>
-                <h3>Software Development</h3>
-                <ul>
-                    <li>Software Developer</li>
-                    <li>FullStack Developer</li>
-                    <li>Backend Developer</li>
-                </ul>
-            </div>
+            <div class="categories-container">
 
-            <div>
-                <h3>Data Scientist</h3>
-                <ul>
-                    <li>Data analyst</li>
-                    <li>ML Engineer</li>
-                </ul>
-            </div>
+                <div class="category-card">
+                    <h3>Software Development</h3>
+                    <ul>
+                        <li>Software Developer</li>
+                        <li>FullStack Developer</li>
+                        <li>Backend Developer</li>
+                    </ul>
+                </div>
 
-            <div>
-                <h3>Marketing</h3>
-                <ul>
-                    <li>SEO specialist</li>
-                    <li>Digital Marketing Expert</li>
-                    <li>Social Media Manager</li>
-                </ul>
-            </div>
+                <div class="category-card">
+                    <h3>Data Scientist</h3>
+                    <ul>
+                        <li>Data analyst</li>
+                        <li>ML Engineer</li>
+                    </ul>
+                </div>
 
-            <div>
-                <h3>Design</h3>
-                <ul>
-                    <li>UI/UX Designer</li>
-                    <li>Graphic Designer</li>
-                    <li>Product Designer</li>
-                </ul>
+                <div class="category-card">
+                    <h3>Marketing</h3>
+                    <ul>
+                        <li>SEO specialist</li>
+                        <li>Digital Marketing Expert</li>
+                        <li>Social Media Manager</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <h3>Design</h3>
+                    <ul>
+                        <li>UI/UX Designer</li>
+                        <li>Graphic Designer</li>
+                        <li>Product Designer</li>
+                    </ul>
+                </div>
             </div>
 
         </section>
 <hr>
-        <section>
+        <section class ="featured-jobs">
 
-                <h2>Featured Jobs for you</h2>
+            <h2>Featured Jobs for you</h2>
 
-                <div>
+            <div class="jobs-container">
+
+                <div class="job-card">
                     <h3>Software Engineer</h3>
-                    <p>Company: Technia</p>
-                    <p>Location: Delhi</p>
-                    <p>Type: Full Time</p>
+                    <p><strong>Company:</strong> TechNova</p>
+                    <p><strong>Location:</strong> Bangalore</p>
+                    <p><strong>Type:</strong> Full Time</p>
+                    <button>Apply Now</button>
                 </div>
 
-                <div>
+                <div class="job-card">
                     <h3>Data Analyst</h3>
-                    <p>Company: Data works</p>
-                    <p>Location: Hyderabad</p>
-                    <p>Type: Full Time</p>
-                </div>
+                    <p><strong>Company:</strong> Data Works</p>
+                    <p><strong>Location:</strong> Hyderabad</p>
+                    <p><strong>Type:</strong> Full Time</p>
+                    <button>Apply Now</button>
+                </div>    
 
-                <div>
-                    <h3>UI/UX Designer</h3>
-                    <p>Company: Creative Labs</p>
-                    <p>Location: Remote</p>
-                    <p>Type: Internshi[</p>
+                <div class="job-card">
+                    <h3>UI/UX Developer</h3>
+                    <p><strong>Company:</strong> Creative Labs</p>
+                    <p><strong>Location:</strong> Remote</p>
+                    <p><strong>Type:</strong> Internship</p>
+                    <button>Apply Now</button>
                 </div>
+            </div>
         </section>
     </main>
     <hr>
 
-    <footer>
-        <p><strong>JobSphere</strong></p>
-        <p>Your trusted platform to explore career opportunities.</p>
-        <p>Contact: support@jobsphere.com</p>
-        <p>© 2026 JobSphere. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-content">
+    
+            <h3>JobSphere</h3>
+    
+            <p>Your trusted platform to explore career opportunities.</p>
+
+    
+            <p class="footer-links">
+      
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+            </p>
+
+            <p class="copyright">
+            © 2026 JobSphere. All rights reserved.
+            </p>
+        </div>
     </footer>
 
 </body>
