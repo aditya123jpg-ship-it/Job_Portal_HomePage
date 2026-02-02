@@ -3,43 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>Register | JobSphere</title>
+
+    <style>
+        .register-section 
+        {
+            max-width: 460px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #eef2f7;
+            border-radius: 12px;
+            text-align: center;
+            background-color: #eef2f7;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .register-form 
+        {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .register-form div 
+        {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .register-form input,
+        .register-form select 
+        {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+        }
+
+        .register-form input:focus,
+        .register-form select:focus 
+        {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .register-form button 
+        {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            display:block;
+        }
+
+        .register-form button:hover 
+        {
+            background-color: #1d4ed8;
+            
+        }
+
+        .register-section:hover {
+            background-color: #e0f2fe;   
+            transition: background-color 0.3s ease;
+            transform: translateY(-2px);
+        }
+
+
+        </style>
+
 </head>
 <body>
     
     <header>
-        <h2>JobSphere</h2>
+        <div>
+            <h1 style="margin: 0; font-size: 24px;">JobSphere</h1>
+        </div>
+
+        <div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Listing of jobs</a>
+            <a href="#">Companies</a>
+            <a href="login.html">Login</a>
+            <button>Post a Job</button>
+        </nav>
+        </div>
+
     </header>
 
     <main>
+    <section class="register-section">
+        <h2>Create your account</h2>
+        <p>Enter the details below to create your account and enjoy the benefits of our site.</p>
 
-        <h3>Create your account</h3>
-        <p>Enter the details below to create your account and enjoy the benifits of our site.</p>
-
-        <form >
+        <form class="register-form">
+        <div>
             <label>Name</label>
-            <input type="text" required placeholder="Enter your fullname"><br><br>
+            <input type="text" required placeholder="Enter your full name">
 
             <label>Email</label>
-            <input type="Email" required placeholder="Enter your email"><br><br>
+            <input type="email" required placeholder="Enter your email">
 
             <label>Create a strong password</label>
-            <input type="password" placeholder="create password"><br><br>
+            <input type="password" placeholder="Create password">
 
             <label>Register as</label>
             <select>
-                <option value>Select your status</option>
-                <option value="jobseeker">Job Seeker</option>
-                <option value="employer">Employer</option>
-            </select><br><br>
+            <option value="">Select your status</option>
+            <option value="jobseeker">Job Seeker</option>
+            <option value="employer">Employer</option>
+            </select>
 
-            <button>Register</button>
+            <button type="submit">Register</button>
+        </div>
         </form>
 
+    </section>
     </main>
 
-    <footer>
 
+    <footer class="footer">
+        <div class="footer-content">
+    
+            <h3>JobSphere</h3>
+    
+            <p>Your trusted platform to explore career opportunities.</p>
+
+    
+            <p class="footer-links">
+      
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+            </p>
+
+            <p class="copyright">
+            © 2026 JobSphere. All rights reserved.
+            </p>
+        </div>
     </footer>
 </body>
 </html>

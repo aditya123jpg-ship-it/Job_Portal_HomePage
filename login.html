@@ -3,33 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>Login | JobSphere</title>
+    <style>
+        .login-section 
+        {
+            max-width: 420px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #eef2f7;   /* lighter, calm */
+            border-radius: 12px;
+            text-align: center;
+        }
+
+
+        .loginform 
+        {
+            text-align: left;
+        }
+
+            
+        .loginform div 
+        {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+
+        .loginform input 
+        {
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            width:100%;
+        }
+
+        .loginform button 
+        {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width:100%;
+            font-weight: 600;
+        }
+
+        .loginform a 
+        {
+            font-size: 14px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .loginform a:hover 
+        {
+            text-decoration: underline;
+        }
+
+        .login-section > a 
+        {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .loginform input:focus 
+        {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+
+
+    </style>
 </head>
 <body>
     
     <header>
-        <h1>
-            JobSphere
-        </h1>
+        <div>
+            <h1 style="margin: 0; font-size: 24px;">JobSphere</h1>
+        </div>
+
+        <div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Listing of jobs</a>
+            <a href="#">Companies</a>
+            <a href="login.html">Login</a>
+            <button>Post a Job</button>
+        </nav>
+        </div>
 
     </header>
 
     <main>
 
-        <section>
+        <section class="login-section">
             <h2>Login to your account.</h2>
             <p>Kindly enter you details below to continue</p>
 
-            <form >
-
-                <label>Email</label><br>
-                <input type="mail" placeholder="Enter email"><br><br>
-
-                <label>Password</label><br>
-                <input type="password" placeholder="Enter your password">
-                <a href="#">Forgot Password?</a><br><br>
-
-                <button>Login</button><br>
+            <form class="loginform">
+                <div>
+                    <label>Email</label>
+                    <input type="mail" placeholder="Enter email">
+                    
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                    <a href="#">Forgot Password?</a>
+                    <button>Login</button>
+                </div>
             </form>
 
             <a href="register.html">Don't have an account? Register yourself here</a>
@@ -37,8 +128,26 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
+        <div class="footer-content">
+    
+            <h3>JobSphere</h3>
+    
+            <p>Your trusted platform to explore career opportunities.</p>
 
+    
+            <p class="footer-links">
+      
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+            </p>
+
+            <p class="copyright">
+            © 2026 JobSphere. All rights reserved.
+            </p>
+        </div>
     </footer>
 </body>
 </html>

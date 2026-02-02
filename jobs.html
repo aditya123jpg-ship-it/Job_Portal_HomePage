@@ -1,21 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=hed, initial-scale=1.0">
-    <title>JobDetails | JobSphere</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Jobs | JobSphere</title>
+
+  <style>
+    .jobs-section 
+    {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .jobs-section h2 
+    {
+      margin-bottom: 10px;
+    }
+
+    .jobs-section p 
+    {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .jobs-container 
+    {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .job-card 
+    {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .job-card h3 
+    {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .job-card p 
+    {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .job-card button 
+    {
+      margin-top: 12px;
+      padding: 8px 14px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .job-card button:hover 
+    {
+      background-color: #1d4ed8;
+    }
+
+    .jobs-section h2 
+    {
+        font-size: 30px;
+        color: #0f172a;
+        margin-bottom: 8px;
+    }
+
+    .jobs-section p 
+    {
+        font-size: 15px;
+        color: #6b7280;
+        margin-bottom: 35px;
+    }
+
+  </style>
 </head>
+
 <body>
-    <header>
-        <h2>Find the job that suits you!!</h2>
-    </header>
 
-    <main>
+<header>
+  <div>
+    <h1 style="margin: 0; font-size: 24px;">JobSphere</h1>
+  </div>
 
-    </main>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Listing of jobs</a>
+    <a href="#">Companies</a>
+    <a href="login.html">Login</a>
+    <button>Post a Job</button>
+  </nav>
+</header>
 
-    <footer>
+<main>
+  <section class="jobs-section">
+    <h2>Available Jobs</h2>
+    <p>Explore verified job opportunities from trusted companies and take the next step in your career.</p>
 
-    </footer>
+    <div class="jobs-container">
+
+      <div class="job-card">
+        <h3>Software Engineer</h3>
+        <p><strong>Company:</strong> TechNova</p>
+        <p><strong>Location:</strong> Bangalore</p>
+        <p><strong>Type:</strong> Full Time</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="job-card">
+        <h3>Data Analyst</h3>
+        <p><strong>Company:</strong> DataWorks</p>
+        <p><strong>Location:</strong> Hyderabad</p>
+        <p><strong>Type:</strong> Full Time</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="job-card">
+        <h3>UI/UX Designer</h3>
+        <p><strong>Company:</strong> Creative Labs</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Type:</strong> Internship</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="job-card">
+        <h3>Digital Marketing Executive</h3>
+        <p><strong>Company:</strong> Growthify</p>
+        <p><strong>Location:</strong> Pune</p>
+        <p><strong>Type:</strong> Part Time</p>
+        <button>View Details</button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <h3>JobSphere</h3>
+    <p>Your trusted platform to explore career opportunities.</p>
+
+    <p class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </p>
+
+    <p class="copyright">
+      © 2026 JobSphere. All rights reserved.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
