@@ -6,6 +6,88 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
+
+    <style>
+        .post-job-section 
+        {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #eef2f7;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .post-job-section h2 
+        {
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .post-job-section p 
+        {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .post-job-form {
+        text-align: left;
+        }
+
+        .post-job-form > div 
+        {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .post-job-form input,
+        .post-job-form select,
+        .post-job-form textarea 
+        {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+    .post-job-form textarea 
+        {
+            resize: vertical;
+        }
+
+        .post-job-form input:focus,
+        .post-job-form select:focus,
+        .post-job-form textarea:focus 
+        {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .post-job-form button 
+        {
+            margin-top: 10px;
+            padding: 12px;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .post-job-form button:hover 
+        {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,6 +107,60 @@
 
     </header>
 
+    <section class="post-job-section">
+        <h2>Post a New Job!!</h2>
+        <p>Fill the following details to post a new job</p>
+
+        <form class="post-job-form">
+
+            <div>
+                <label>Job Title</label>
+                <input  id="jobTitle" type="text"  placeholder="e.g. Software Engineer" >
+            </div>
+
+            <div>
+                <label>Company Name</label>
+                <input id="company" type="text"  placeholder="e.g. TechNova Pvt Ltd"  >
+            </div>
+
+            <div>
+                <label>Location</label>
+                <input id="location" type="text"  placeholder="e.g. Bangalore / Remote"  >
+            </div>
+
+            <div>
+            <label>Job Type</label>
+            <select id="jobType">
+                <option value="">Select job type</option>
+                <option>Full Time</option>
+                <option>Part Time</option>
+                <option>Internship</option>
+                <option>Contract</option>
+            </select>
+            </div>
+
+            <div>
+                <label>Salary Range</label>
+                <input  type="text" placeholder="e.g. ₹6 to 10 LPA">
+            </div>
+
+            <div>
+                <label>Job Description</label>
+                <textarea rows="4" placeholder="Describe the role, responsibilities, and requirements">
+            </textarea>
+            </div>
+
+            <button type="submit">Post Job</button>
+
+        </form>
+        <section class="posted-jobs">
+            <h3>Posted Jobs (<span id="jobCount">0</span>)</h3>
+            <div id="jobList">
+
+            </div>
+        </section>
+
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
@@ -47,5 +183,51 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.querySelector(".post-job-form");
+            const jobList = document.getElementById("jobList");
+            const jobCount = document.getElementById("jobCount");
+
+            form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const jobTitle = document.getElementById("jobTitle").value;
+            const company = document.getElementById("company").value;
+            const location = document.getElementById("location").value;
+            const type = document.getElementById("jobType").value;
+
+             if (jobTitle === "" || company === "" || location === "" || type === "") {
+               alert("Please fill all required fields");
+                return;
+            }
+
+            const jobCard = document.createElement("div");
+            jobCard.className = "job-card";
+
+            jobCard.innerHTML = `
+                <h4>${jobTitle}</h4>
+                <p><strong>Company:</strong> ${company}</p>
+                <p><strong>Location:</strong> ${location}</p>
+                <p><strong>Type:</strong> ${type}</p>
+                <button class="delete-btn">Delete</button>
+            `;
+
+            jobList.appendChild(jobCard);
+            jobCount.innerText = jobList.children.length;
+
+            jobCard.querySelector(".delete-btn").addEventListener("click", function () {
+                jobCard.remove();
+                jobCount.innerText = jobList.children.length;
+            });
+
+            form.reset();
+            });
+
+        });
+    </script>
+
 </body>
 </html>

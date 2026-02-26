@@ -83,6 +83,23 @@
         margin-bottom: 35px;
     }
 
+    .search-box {
+  margin-bottom: 25px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+
   </style>
 </head>
 
@@ -106,9 +123,14 @@
   <section class="jobs-section">
     <h2>Available Jobs</h2>
     <p>Explore verified job opportunities from trusted companies and take the next step in your career.</p>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by title, company or location...">
+    </div>
+
 
     <div class="jobs-container">
 
+      
       <div class="job-card">
         <h3>Software Engineer</h3>
         <p><strong>Company:</strong> TechNova</p>
@@ -162,6 +184,26 @@
     </p>
   </div>
 </footer>
+
+<script>
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keyup", function () {
+    const searchValue = searchInput.value.toLowerCase();
+
+    const jobCards = document.querySelectorAll(".job-card");
+
+    jobCards.forEach(function (card) {
+      const text = card.innerText.toLowerCase();
+
+      if (text.includes(searchValue)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
